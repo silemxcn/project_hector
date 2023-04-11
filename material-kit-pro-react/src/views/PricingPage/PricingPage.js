@@ -34,7 +34,13 @@ export default function PricingPage() {
 		<div>
 			<Header
 				image={require('assets/img/logo.png')}
-				brand='Hector Castillo'
+				brand={
+					<img
+						src={logo}
+						alt='logo'
+						style={{ width: 'auto', height: '4rem' }}
+					/>
+				}
 				links={<HeaderLinks dropdownHoverColor='info' />}
 				fixed
 				color='transparent'
@@ -44,7 +50,11 @@ export default function PricingPage() {
 				}}
 			/>
 
-			<Parallax image={require('assets/img/hectorClassroom.png')} filter='dark'>
+			<Parallax
+				image={require('assets/img/hectorClassroom.png')}
+				filter='dark'
+				small
+			>
 				<div className={classes.container}>
 					<GridContainer>
 						<GridItem

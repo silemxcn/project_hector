@@ -25,6 +25,8 @@ import CustomInput from 'components/CustomInput/CustomInput.js';
 import loginPageStyle from 'assets/jss/material-kit-pro-react/views/loginPageStyle.js';
 
 import image from 'assets/img/hector_and_student.png';
+import { firebase } from 'firebase/compat/app';
+import { auth } from 'firebase.js';
 
 const useStyles = makeStyles(loginPageStyle);
 
@@ -62,7 +64,7 @@ export default function LoginPage() {
 									>
 										<h4 className={classes.cardTitle}>Login</h4>
 										<div className={classes.socialLine}>
-											<Button
+											{/* <Button
 												justIcon
 												color='transparent'
 												className={classes.iconButtons}
@@ -77,12 +79,16 @@ export default function LoginPage() {
 												onClick={(e) => e.preventDefault()}
 											>
 												<i className='fab fa-facebook' />
-											</Button>
+											</Button> */}
 											<Button
 												justIcon
 												color='transparent'
 												className={classes.iconButtons}
-												onClick={(e) => e.preventDefault()}
+												onClick={() =>
+													auth.SignInWithRedirect(
+														new firebase.auth.GoogleAuthProvider()
+													)
+												}
 											>
 												<i className='fab fa-google-plus-g' />
 											</Button>

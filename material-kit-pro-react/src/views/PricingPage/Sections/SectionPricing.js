@@ -37,6 +37,9 @@ export default function SectionPricing() {
 							{
 								tabButton: 'book a call today',
 							},
+							{
+								tabButton: 'text',
+							},
 						]}
 					/>
 				</GridItem>
