@@ -1,13 +1,6 @@
 import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-import { initializeApp } from 'firebase/app';
-
-import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
-
-createUserWithEmailAndPassword(auth, email, password);
-
-const app = initializeApp(firebaseConfig);
+import 'firebase/compat/auth';
 
 export const auth = firebase
 	.initializeApp({
@@ -20,33 +13,3 @@ export const auth = firebase
 		measurementId: 'G-1WEND8S3QK',
 	})
 	.auth();
-
-const AuthContext = React.createContext();
-
-export function useAuth() {
-	return useContext(AuthContext);
-}
-
-const AuthProvider = ({ children }) => {
-	const [currentUser, setCurrentUser] = useState();
-
-	function signup(email, password) {
-		return auth.createUserWithEmailAndPassword(email, password);
-	}
-
-	useEffect(() => {
-		const unsubscribe = auth.onAuthStateChanged((user) => {
-			setCurrentUser(user);
-		});
-
-		return unsubscribe;
-	}, []);
-
-	const value = {
-		currentUser,
-		signup,
-	};
-	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
-};
-
-export default AuthProvider;

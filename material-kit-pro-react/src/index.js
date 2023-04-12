@@ -38,7 +38,6 @@ import SectionsPage from 'views/SectionsPage/SectionsPage.js';
 import ShoppingCartPage from 'views/ShoppingCartPage/ShoppingCartPage.js';
 import SignupPage from 'views/SignupPage/SignupPage.js';
 import ErrorPage from 'views/ErrorPage/ErrorPage.js';
-import { AuthProvider } from 'contexts/AuthContext';
 
 var hist = createBrowserHistory();
 
@@ -60,9 +59,8 @@ ReactDOM.render(
 			<Route path='/signup-page' component={SignupPage} />
 			<Route path='/error-page' component={ErrorPage} />
 			<Route path='/' component={PresentationPage} />
-			<AuthProvider>
-				<Route path='/pricing' component={PricingPage} />
-			</AuthProvider>
+
+			<Route path='/pricing' component={PricingPage} />
 		</Switch>
 	</Router>,
 	document.getElementById('root')
