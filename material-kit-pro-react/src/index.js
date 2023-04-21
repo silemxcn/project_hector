@@ -1,19 +1,3 @@
-/*!
-
-=========================================================
-* Material Kit PRO React - v1.9.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-kit-pro-react
-* Copyright 2020 Creative Tim (https://www.creative-tim.com)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createBrowserHistory } from 'history';
@@ -21,7 +5,6 @@ import { Router, Route, Switch } from 'react-router';
 
 import 'assets/scss/material-kit-pro-react.scss?v=1.9.0';
 
-// pages for this product
 import AboutUsPage from 'views/AboutUsPage/AboutUsPage.js';
 import BlogPostPage from 'views/BlogPostPage/BlogPostPage.js';
 import BlogPostsPage from 'views/BlogPostsPage/BlogPostsPage.js';
@@ -38,11 +21,19 @@ import SectionsPage from 'views/SectionsPage/SectionsPage.js';
 import ShoppingCartPage from 'views/ShoppingCartPage/ShoppingCartPage.js';
 import SignupPage from 'views/SignupPage/SignupPage.js';
 import ErrorPage from 'views/ErrorPage/ErrorPage.js';
+// import { Login } from 'components/Login';
+// import { Profile } from 'components/Profile';
+// import { AuthProvider } from 'contexts/AuthContext';
+
+// import firebase from 'firebase';
+// require('firebase/auth');
 
 var hist = createBrowserHistory();
 
 ReactDOM.render(
+	//history={hist}
 	<Router history={hist}>
+		{/* <AuthProvider> */}
 		<Switch>
 			<Route path='/about-us' component={AboutUsPage} />
 			<Route path='/blog-post' component={BlogPostPage} />
@@ -58,10 +49,10 @@ ReactDOM.render(
 			<Route path='/shopping-cart-page' component={ShoppingCartPage} />
 			<Route path='/signup-page' component={SignupPage} />
 			<Route path='/error-page' component={ErrorPage} />
-			<Route path='/' component={PresentationPage} />
-
 			<Route path='/pricing' component={PricingPage} />
+			<Route path='/' component={PresentationPage} />
 		</Switch>
+		{/* </AuthProvider> */}
 	</Router>,
 	document.getElementById('root')
 );

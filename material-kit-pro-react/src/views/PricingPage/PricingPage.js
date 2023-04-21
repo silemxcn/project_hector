@@ -15,6 +15,8 @@ import Parallax from 'components/Parallax/Parallax.js';
 import GridContainer from 'components/Grid/GridContainer.js';
 import GridItem from 'components/Grid/GridItem.js';
 import Footer from 'components/Footer/Footer.js';
+// import { useHistory } from 'react-router-dom';
+// import { auth } from 'firebase.js';
 // sections for this page
 import SectionPricing from 'views/PricingPage/Sections/SectionPricing.js';
 import SectionFeatures from 'views/PricingPage/Sections/SectionFeatures.js';
