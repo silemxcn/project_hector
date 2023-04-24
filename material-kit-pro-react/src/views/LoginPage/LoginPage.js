@@ -21,6 +21,7 @@ import Card from 'components/Card/Card.js';
 import CardBody from 'components/Card/CardBody.js';
 import CardHeader from 'components/Card/CardHeader.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
+import logo from 'assets/img/logo.png';
 
 import loginPageStyle from 'assets/jss/material-kit-pro-react/views/loginPageStyle.js';
 
@@ -39,10 +40,21 @@ export default function LoginPage() {
 	return (
 		<div>
 			<Header
-				absolute
-				color='transparent'
-				brand='Hector Castillo'
+				image={require('assets/img/logo.png')}
+				brand={
+					<img
+						src={logo}
+						alt='logo'
+						style={{ width: 'auto', height: '4rem' }}
+					/>
+				}
 				links={<HeaderLinks dropdownHoverColor='info' />}
+				fixed
+				color='transparent'
+				changeColorOnScroll={{
+					height: 300,
+					color: 'info',
+				}}
 			/>
 			<div
 				className={classes.pageHeader}
