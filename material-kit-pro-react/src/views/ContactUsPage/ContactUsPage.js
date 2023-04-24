@@ -27,83 +27,10 @@ import InfoArea from 'components/InfoArea/InfoArea.js';
 import CustomInput from 'components/CustomInput/CustomInput.js';
 import Button from 'components/CustomButtons/Button.js';
 import Footer from 'components/Footer/Footer.js';
+import Parallax from 'components/Parallax/Parallax.js';
+import logo from 'assets/img/logo.png';
 
 import contactUsStyle from 'assets/jss/material-kit-pro-react/views/contactUsStyle.js';
-
-const CustomSkinMap = withScriptjs(
-	withGoogleMap(() => (
-		<GoogleMap
-			defaultZoom={14}
-			defaultCenter={{ lat: 44.43353, lng: 26.093928 }}
-			defaultOptions={{
-				scrollwheel: false,
-				zoomControl: true,
-				styles: [
-					{
-						featureType: 'water',
-						stylers: [
-							{ saturation: 43 },
-							{ lightness: -11 },
-							{ hue: '#0088ff' },
-						],
-					},
-					{
-						featureType: 'road',
-						elementType: 'geometry.fill',
-						stylers: [
-							{ hue: '#ff0000' },
-							{ saturation: -100 },
-							{ lightness: 99 },
-						],
-					},
-					{
-						featureType: 'road',
-						elementType: 'geometry.stroke',
-						stylers: [{ color: '#808080' }, { lightness: 54 }],
-					},
-					{
-						featureType: 'landscape.man_made',
-						elementType: 'geometry.fill',
-						stylers: [{ color: '#ece2d9' }],
-					},
-					{
-						featureType: 'poi.park',
-						elementType: 'geometry.fill',
-						stylers: [{ color: '#ccdca1' }],
-					},
-					{
-						featureType: 'road',
-						elementType: 'labels.text.fill',
-						stylers: [{ color: '#767676' }],
-					},
-					{
-						featureType: 'road',
-						elementType: 'labels.text.stroke',
-						stylers: [{ color: '#ffffff' }],
-					},
-					{ featureType: 'poi', stylers: [{ visibility: 'off' }] },
-					{
-						featureType: 'landscape.natural',
-						elementType: 'geometry.fill',
-						stylers: [{ visibility: 'on' }, { color: '#b8cb93' }],
-					},
-					{ featureType: 'poi.park', stylers: [{ visibility: 'on' }] },
-					{
-						featureType: 'poi.sports_complex',
-						stylers: [{ visibility: 'on' }],
-					},
-					{ featureType: 'poi.medical', stylers: [{ visibility: 'on' }] },
-					{
-						featureType: 'poi.business',
-						stylers: [{ visibility: 'simplified' }],
-					},
-				],
-			}}
-		>
-			<Marker position={{ lat: 44.43353, lng: 26.093928 }} />
-		</GoogleMap>
-	))
-);
 
 const useStyles = makeStyles(contactUsStyle);
 
@@ -116,27 +43,52 @@ export default function ContactUsPage() {
 	return (
 		<div>
 			<Header
-				brand='Hector Castillo'
-				links={<HeaderLinks dropdownHoverColor='dark' />}
+				image={require('assets/img/logo.png')}
+				brand={
+					<img
+						src={logo}
+						alt='logo'
+						style={{ width: 'auto', height: '4rem' }}
+					/>
+				}
+				links={<HeaderLinks dropdownHoverColor='info' />}
 				fixed
-				color='dark'
+				color='transparent'
+				changeColorOnScroll={{
+					height: 300,
+					color: 'info',
+				}}
 			/>
-			<div className={classes.bigMap}>
-				<CustomSkinMap
-					googleMapURL='https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE'
-					loadingElement={<div style={{ height: `100%` }} />}
-					containerElement={
-						<div
-							style={{
-								height: `100%`,
-								borderRadius: '6px',
-								overflow: 'hidden',
-							}}
-						/>
-					}
-					mapElement={<div style={{ height: `100%` }} />}
-				/>
-			</div>
+
+			<Parallax image={require('assets/img/simp.jpg')} filter='dark'>
+				<div className={classes.container}>
+					<GridContainer>
+						<GridItem
+							md={8}
+							sm={8}
+							className={classNames(
+								classes.mlAuto,
+								classes.mrAuto,
+								classes.textCenter
+							)}
+						>
+							<h1 className={classes.title}>Let{"'"}s get started</h1>
+							<h4>
+								With my coaching services, you not only get access to my
+								top-notch guidance and expertise, but you can also receive
+								coaching through multiple channels to suit your needs and
+								lifestyle. Whether it's a one-on-one session, phone call, text
+								message, or video conference, we offer flexible options to
+								ensure that you receive the support you need when you need it
+								most. With a personalized approach, you can be sure that you'll
+								get the attention and care you deserve as we work together to
+								create a gameplan for your success. Don't wait - take the first
+								step towards your future and start your journey today!
+							</h4>
+						</GridItem>
+					</GridContainer>
+				</div>
+			</Parallax>
 			<div className={classNames(classes.main, classes.mainRaised)}>
 				<div className={classes.contactContent}>
 					<div className={classes.container}>
@@ -234,15 +186,6 @@ export default function ContactUsPage() {
 					<div>
 						<div className={classes.left}>
 							<List className={classes.list}>
-								<ListItem className={classes.inlineBlock}>
-									<a
-										href='https://www.creative-tim.com/?ref=mkpr-contact-us'
-										target='_blank'
-										className={classes.block}
-									>
-										Creative Tim
-									</a>
-								</ListItem>
 								<ListItem className={classes.inlineBlock}>
 									<a
 										href='https://www.creative-tim.com/presentation?ref=mkpr-contact-us'
