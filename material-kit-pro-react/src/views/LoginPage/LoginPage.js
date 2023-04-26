@@ -30,7 +30,6 @@ import firebase from 'firebase/compat/app';
 import { auth } from 'firebase.js';
 
 const useStyles = makeStyles(loginPageStyle);
-
 export default function LoginPage() {
 	React.useEffect(() => {
 		window.scrollTo(0, 0);
