@@ -188,23 +188,43 @@ export default function SectionTestimonials({ ...rest }) {
 									<Card testimonial plain className={classes.card2}>
 										<CardAvatar testimonial plain>
 											<a href='#pablo' onClick={(e) => e.preventDefault()}>
-												<img src={kendall} alt='...' />
+												<img src={christian} alt='...' />
 											</a>
 										</CardAvatar>
 										<CardBody plain>
 											<h5 className={classes.cardDescription}>
-												{'"'}I speak yell scream directly at the old guard on
-												behalf of the future. I gotta say at that time I’d like
-												to meet Kanye I speak yell scream directly at the old
-												guard on behalf of the future. My brother Chance!!!
-												<br />
-												Thank you for letting me work on this masterpiece. One
-												of my favorite people.{'"'}
+												{'"'}Before I found your coaching services, I was
+												struggling to navigate the tricky waters of dating.
+												Despite receiving plenty of attention from women, I
+												found myself unable to close the deal and move things
+												forward. It seemed that no matter what approach I took,
+												girls would either go cold or demand an unreasonable
+												number of dates before anything physical would happen. I
+												found myself trapped in a frustrating cycle, where I was
+												either too aloof and cool for school, or too nice and
+												never getting anywhere. I knew that being a full-on
+												alpha "fuck boy" wasn't a sustainable strategy, but I
+												was at a loss as to how to bridge the gap between the
+												two extremes. That's where your coaching came in.
+												Through our coaching calls, I learned how to become the
+												romantic lover that women crave. You taught me how to
+												give them the boyfriend feelings they desire, while
+												still being able to move quickly and pursue my own
+												desires with passion. The transformation was incredible.
+												I suddenly found myself able to give women the romantic
+												experiences they craved, without having to sacrifice my
+												own desires in the process. This new approach has been
+												sustainable and successful, allowing me to build deeper
+												connections with women while still moving forward at a
+												pace that works for me. Your coaching has truly changed
+												my dating life for the better, and I can't thank you
+												enough for the guidance and support you provided along
+												the way{'"'}
 											</h5>
-											<h4 className={classes.cardTitle}>Kendall Thompson</h4>
-											<Muted>
-												<h6>CEO @ Marketing Digital Ltd.</h6>
-											</Muted>
+											<h4 className={classes.cardTitle}>Kyle T</h4>
+											{/* <Muted>
+												<h6>Designer @ Louboutin & Co.</h6>
+											</Muted> */}
 										</CardBody>
 										<div>
 											<Warning>
@@ -226,27 +246,45 @@ export default function SectionTestimonials({ ...rest }) {
 									</Card>
 								</div>
 								<div>
-									<Card testimonial plain className={classes.card2}>
+									<Card
+										testimonial
+										plain
+										className={classes.card2}
+										justifyContent='center'
+										alignItems='center'
+									>
 										<CardAvatar testimonial plain>
 											<a href='#pablo' onClick={(e) => e.preventDefault()}>
-												<img src={christian} alt='...' />
+												<img src={kendall} alt='...' />
 											</a>
 										</CardAvatar>
 										<CardBody plain>
 											<h5 className={classes.cardDescription}>
-												{'"'}Thank you Anna for the invite thank you to the
-												whole Vogue team Called I Miss the Old Kanye At the God
-												{"'"}s last game Chop up the soul Kanye. I promise I
-												will never let the people down. I want a better life for
-												all!!! Pablo Pablo Pablo Pablo! Thank you Anna for the
-												invite thank you to the whole Vogue team.{'"'}
+												{'"'}Hector was the best investment I made in myself!
+												More than anything, he taught me how to unapologetically
+												be myself and that has helped in every aspect of my
+												life, from women to work to everything in between. He
+												knows how people work more than anyone else I{"'"}ve
+												ever met. Hector has an intuition about people that is
+												rarely wrong, and as a mentor he teaches you about
+												yourself in a few weeks that would otherwise take you
+												years to learn by yourself. He will tell you what you
+												need to hear, not necessarily what you want to hear, and
+												that helps you grow into a better, well-rounded person.
+												I would recommend everyone to learn from him, but it
+												{"'"}s a shame he{"'"}s only one person because the
+												whole world can learn something from his wisdom.{'"'}
 											</h5>
-											<h4 className={classes.cardTitle}>Christian Louboutin</h4>
-											<Muted>
-												<h6>Designer @ Louboutin & Co.</h6>
-											</Muted>
+											<h4></h4>
+											<h4 className={classes.cardTitle}>Andre</h4>
+											{/* <Muted>
+												<h6>CEO @ Marketing Digital Ltd.</h6>
+											</Muted> */}
 										</CardBody>
 										<div>
+											<Warning>
+												<Star className={classes.starIcons} />
+											</Warning>
 											<Warning>
 												<Star className={classes.starIcons} />
 											</Warning>

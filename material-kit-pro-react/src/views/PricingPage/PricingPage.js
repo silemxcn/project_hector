@@ -15,6 +15,8 @@ import Parallax from 'components/Parallax/Parallax.js';
 import GridContainer from 'components/Grid/GridContainer.js';
 import GridItem from 'components/Grid/GridItem.js';
 import Footer from 'components/Footer/Footer.js';
+// import { useHistory } from 'react-router-dom';
+// import { auth } from 'firebase.js';
 // sections for this page
 import SectionPricing from 'views/PricingPage/Sections/SectionPricing.js';
 import SectionFeatures from 'views/PricingPage/Sections/SectionFeatures.js';
@@ -130,13 +132,7 @@ export default function PricingPage() {
 						<div className={classes.right}>
 							&copy; {1900 + new Date().getYear()} , made with{' '}
 							<Favorite className={classes.icon} /> by{' '}
-							<a
-								href='https://www.creative-tim.com?ref=mkpr-pricing'
-								target='_blank'
-							>
-								Sorin Gifei
-							</a>{' '}
-							for a better web.
+							<a target='_blank'>Sorin Gifei</a> for a better web.
 						</div>
 					</div>
 				}
