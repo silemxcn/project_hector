@@ -23,7 +23,7 @@ import SignupPage from 'views/SignupPage/SignupPage.js';
 import ErrorPage from 'views/ErrorPage/ErrorPage.js';
 // import { Login } from 'components/Login';
 // import { Profile } from 'components/Profile';
-// import { AuthProvider } from 'contexts/AuthContext';
+import { AuthProvider } from 'contexts/AuthContext';
 
 // import firebase from 'firebase';
 // require('firebase/auth');
@@ -33,26 +33,26 @@ var hist = createBrowserHistory();
 ReactDOM.render(
 	//history={hist}
 	<Router history={hist}>
-		{/* <AuthProvider> */}
-		<Switch>
-			<Route path='/about-us' component={AboutUsPage} />
-			<Route path='/blog-post' component={BlogPostPage} />
-			<Route path='/blog-posts' component={BlogPostsPage} />
-			<Route path='/components' component={ComponentsPage} />
-			<Route path='/contact-us' component={ContactUsPage} />
-			<Route path='/ecommerce-page' component={EcommercePage} />
-			<Route path='/landing-page' component={LandingPage} />
-			<Route path='/login-page' component={LoginPage} />
-			<Route path='/profile-page' component={ProfilePage} />
-			<Route path='/product-page' component={ProductPage} />
-			<Route path='/sections' component={SectionsPage} />
-			<Route path='/shopping-cart-page' component={ShoppingCartPage} />
-			<Route path='/signup-page' component={SignupPage} />
-			<Route path='/error-page' component={ErrorPage} />
-			<Route path='/pricing' component={PricingPage} />
-			<Route path='/' component={PresentationPage} />
-		</Switch>
-		{/* </AuthProvider> */}
+		<AuthProvider>
+			<Switch>
+				<Route path='/about-us' component={AboutUsPage} />
+				<Route path='/blog-post' component={BlogPostPage} />
+				<Route path='/blog-posts' component={BlogPostsPage} />
+				<Route path='/components' component={ComponentsPage} />
+				<Route path='/contact-us' component={ContactUsPage} />
+				<Route path='/ecommerce-page' component={EcommercePage} />
+				<Route path='/landing-page' component={LandingPage} />
+				<Route path='/login-page' component={LoginPage} />
+				<Route path='/profile-page' component={ProfilePage} />
+				<Route path='/product-page' component={ProductPage} />
+				<Route path='/sections' component={SectionsPage} />
+				<Route path='/shopping-cart-page' component={ShoppingCartPage} />
+				<Route path='/signup-page' component={SignupPage} />
+				<Route path='/error-page' component={ErrorPage} />
+				<Route path='/pricing' component={PricingPage} />
+				<Route path='/' component={PresentationPage} />
+			</Switch>
+		</AuthProvider>
 	</Router>,
 	document.getElementById('root')
 );

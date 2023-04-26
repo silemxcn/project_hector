@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React from 'react';
+import React, { useState } from 'react';
 // @material-ui/core components
 import { makeStyles } from '@material-ui/core/styles';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -27,15 +27,32 @@ import loginPageStyle from 'assets/jss/material-kit-pro-react/views/loginPageSty
 
 import image from 'assets/img/hector_and_student.png';
 import firebase from 'firebase/compat/app';
-import { auth } from 'firebase.js';
+import { auth, signInUser } from 'firebase.js';
 
 const useStyles = makeStyles(loginPageStyle);
+
 export default function LoginPage() {
 	React.useEffect(() => {
 		window.scrollTo(0, 0);
 		document.body.scrollTop = 0;
 	});
 	const classes = useStyles();
+
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+	const [error, seterror] = useState('');
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+
+		console.log('email,password', email, password);
+		const res = await signInUser(email, password);
+		console.log('res', res);
+		setEmail('');
+		setPassword('');
+		if (res.error) seterror(res.error);
+	};
+
 	return (
 		<div>
 			<Header
@@ -67,7 +84,7 @@ export default function LoginPage() {
 					<GridContainer justify='center'>
 						<GridItem xs={12} sm={12} md={4}>
 							<Card>
-								<form className={classes.form}>
+								<form className={classes.form} onSubmit={handleSubmit}>
 									<CardHeader
 										color='primary'
 										signup
@@ -75,22 +92,6 @@ export default function LoginPage() {
 									>
 										<h4 className={classes.cardTitle}>Login</h4>
 										<div className={classes.socialLine}>
-											{/* <Button
-												justIcon
-												color='transparent'
-												className={classes.iconButtons}
-												onClick={(e) => e.preventDefault()}
-											>
-												<i className='fab fa-twitter' />
-											</Button>
-											<Button
-												justIcon
-												color='transparent'
-												className={classes.iconButtons}
-												onClick={(e) => e.preventDefault()}
-											>
-												<i className='fab fa-facebook' />
-											</Button> */}
 											<Button
 												justIcon
 												color='transparent'
@@ -110,21 +111,6 @@ export default function LoginPage() {
 									</p>
 									<CardBody signup>
 										<CustomInput
-											id='first'
-											formControlProps={{
-												fullWidth: true,
-											}}
-											inputProps={{
-												placeholder: 'First Name...',
-												type: 'text',
-												startAdornment: (
-													<InputAdornment position='start'>
-														<Face className={classes.inputIconsColor} />
-													</InputAdornment>
-												),
-											}}
-										/>
-										<CustomInput
 											id='email'
 											formControlProps={{
 												fullWidth: true,
@@ -137,6 +123,9 @@ export default function LoginPage() {
 														<Email className={classes.inputIconsColor} />
 													</InputAdornment>
 												),
+												value: email,
+												required: true,
+												onChange: (e) => setEmail(e.target.value),
 											}}
 										/>
 										<CustomInput
@@ -155,11 +144,14 @@ export default function LoginPage() {
 													</InputAdornment>
 												),
 												autoComplete: 'off',
+												value: password,
+												required: true,
+												onChange: (e) => setPassword(e.target.value),
 											}}
 										/>
 									</CardBody>
 									<div className={classes.textCenter}>
-										<Button simple color='primary' size='lg'>
+										<Button simple color='primary' size='lg' type='submit'>
 											Get started
 										</Button>
 									</div>
