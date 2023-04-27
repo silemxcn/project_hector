@@ -25,8 +25,8 @@ export default function SectionFeatures() {
 			<GridContainer>
 				<GridItem md={4} sm={4} className={classes.mlAuto}>
 					<InfoArea
-						title='Can I cancel my subscription?'
-						description='Yes, you can cancel and perform other actions on your subscriptions via the My Account page.'
+						title='How do I schedule my coaching calls?'
+						description='Once you have purchased a coaching package, you will receive instructions on how to schedule your calls. Typically, you will have access to a scheduling tool where you can select available times that work best for you. We recommend scheduling your calls in advance to ensure that you get the most out of your coaching experience. If you have any questions or concerns about scheduling your calls, please contact us and we will be happy to assist you.'
 						icon={CardMembership}
 						iconColor='info'
 					/>
@@ -44,7 +44,7 @@ export default function SectionFeatures() {
 				<GridItem md={4} sm={4} className={classes.mlAuto}>
 					<InfoArea
 						title='Which payment methods do you take?'
-						description='WooCommerce comes bundled with PayPal (for accepting credit card and PayPal account payments), BACS, and cash on delivery for accepting payments.'
+						description='We accept payment by card. You can securely enter your card details on our website to complete your transaction. We accept all major credit and debit cards, including Visa, Mastercard, American Express, and Discover. If you have any concerns about making a payment, please contact us and we will be happy to assist you.'
 						icon={AttachMoney}
 						iconColor='success'
 					/>
